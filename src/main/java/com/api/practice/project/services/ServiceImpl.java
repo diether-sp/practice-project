@@ -6,13 +6,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceImpl implements Service {
 
+    private Person person = new Person();
+
     @Override
     public Person getInfo() {
-        Person person = new Person();
-        person.setFirstName("Diether");
-        person.setLastName("San Pedro");
-        person.setAge("25");
-
         return person;
     }
+
+    @Override
+    public Person postInfo(Person postPerson){
+        person = postPerson;
+        return person;
+    }
+
+
 }
